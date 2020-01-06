@@ -10,13 +10,17 @@ This baseline requires installing the following pip dependencies (on top of
 a GPU enabled TensorFlow install):
 
 ```
+conda create -n language python=3.6
+conda activate language
 pip install bert-tensorflow natural-questions
 ```
 
 You should then download our model and preprocessed training set with:
 
 ```
-gsutil cp -R gs://bert-nq/bert-joint-baseline .
+python2的环境下：
+pip2 install gsutil
+gsutil -m cp -R gs://bert-nq/bert-joint-baseline .(-m用来加速下载)
 ```
 
 This should give you the preprocessed training set, the model config,
